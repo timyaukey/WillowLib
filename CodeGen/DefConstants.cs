@@ -19,6 +19,7 @@ namespace Willowsoft.WillowLib.CodeGen
         public const string FieldIsIdAttrib = "isid";
         public const string FieldSqltypeAttrib = "sqltype";
         public const string FieldNullableAttrib = "nullable";
+        public const string FieldRevisionAttrib = "revision";
         public const string SqlElement = "sql";
         public const string SqlRoleAttrib = "role";
         public const string SqlNameAttrib = "name";

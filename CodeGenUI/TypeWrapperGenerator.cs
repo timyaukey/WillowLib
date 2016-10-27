@@ -77,6 +77,7 @@ namespace Willowsoft.WillowLib.CodeGenUI
             GenerateAdditional(writer);
 
             writer.WriteLine("}");
+            writer.WriteLine("// end of generated code");
         }
 
         protected string InnerPropertyName(Type type)

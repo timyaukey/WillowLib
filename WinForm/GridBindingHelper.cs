@@ -131,12 +131,23 @@ namespace Willowsoft.WillowLib.WinForm
         {
         }
 
+        private void RowAddedHandler(Object sender,
+            DataGridViewRowEventArgs e)
+        {
+            RowAdded();
+        }
+
+        protected virtual void RowAdded()
+        {
+        }
+
         public void EnableValidation()
         {
             mGrid.CellValidating += CellValidatingHandler;
             mGrid.CellEndEdit += CellEndEditHandler;
             mGrid.RowValidating += RowValidatingHandler;
             mGrid.UserDeletingRow += RowDeletingHandler;
+            mGrid.UserAddedRow += RowAddedHandler;
         }
 
         public void DisableValidation()
@@ -145,6 +156,7 @@ namespace Willowsoft.WillowLib.WinForm
             mGrid.CellEndEdit -= CellEndEditHandler;
             mGrid.RowValidating -= RowValidatingHandler;
             mGrid.UserDeletingRow -= RowDeletingHandler;
+            mGrid.UserAddedRow -= RowAddedHandler;
         }
 
         protected override bool ShowErrorsInFormClosing
@@ -169,6 +181,15 @@ namespace Willowsoft.WillowLib.WinForm
         {
             DataGridViewTextBoxColumn col = AddTextBoxColumn(propertyName, columnTitle, widthInChars, readOnly);
             col.DefaultCellStyle.Format = "c";
+            col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            return col;
+        }
+
+        protected DataGridViewTextBoxColumn AddDateColumn(string propertyName, string columnTitle,
+            int widthInChars, bool readOnly)
+        {
+            DataGridViewTextBoxColumn col = AddTextBoxColumn(propertyName, columnTitle, widthInChars, readOnly);
+            col.DefaultCellStyle.Format = "d";
             col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             return col;
         }

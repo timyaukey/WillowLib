@@ -68,6 +68,34 @@ namespace Willowsoft.WillowLib.CodeGen
             return false;
         }
 
+        protected bool GetRevision(XmlElement field, out string revision)
+        {
+            revision = field.GetAttribute(DefConstants.FieldRevisionAttrib);
+            if (string.IsNullOrEmpty(revision))
+            {
+                revision=string.Empty;
+            }
+            return false;
+        }
+
+        protected bool GetNullable(XmlElement field, out bool nullable)
+        {
+            string nullableText = field.GetAttribute(DefConstants.FieldNullableAttrib);
+            if (string.IsNullOrEmpty(nullableText))
+                nullable = false;
+            else if (nullableText == "false")
+                nullable = false;
+            else if (nullableText == "true")
+                nullable = true;
+            else
+            {
+                nullable = false;
+                return SevereError("Invalid [{0}] attribute on <{1}> element",
+                    DefConstants.FieldNullableAttrib, DefConstants.FieldElement);
+            }
+            return false;
+        }
+        
         protected bool GetClassname(XmlElement entity, out string classname)
         {
             classname = entity.GetAttribute(DefConstants.EntityClassnameAttrib);

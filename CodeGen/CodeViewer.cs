@@ -77,6 +77,16 @@ namespace Willowsoft.WillowLib.CodeGen
             ShowResults(output, errors);
         }
 
+        private void btnGenerateConversion_Click(object sender, EventArgs e)
+        {
+            XmlDocument doc = GetDefinitions();
+            StringWriter output = new StringWriter();
+            ErrorList errors = new ErrorList();
+            TableCreator creator = new TableCreator(output, errors);
+            creator.OutputConversionScript(doc.DocumentElement);
+            ShowResults(output, errors);
+        }
+
         private void btnGenerate_Proc(object sender, EventArgs e)
         {
             XmlDocument doc = GetDefinitions();

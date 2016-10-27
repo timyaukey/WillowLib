@@ -34,27 +34,28 @@
             this.lblEntity = new System.Windows.Forms.Label();
             this.btnGenerateTable = new System.Windows.Forms.Button();
             this.btnGenerateProc = new System.Windows.Forms.Button();
+            this.btnGenerateConversion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtOutput
             // 
-            this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOutput.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(12, 12);
             this.txtOutput.MaxLength = 20000000;
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtOutput.Size = new System.Drawing.Size(664, 583);
+            this.txtOutput.Size = new System.Drawing.Size(701, 495);
             this.txtOutput.TabIndex = 0;
             // 
             // cboEntity
             // 
             this.cboEntity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cboEntity.FormattingEnabled = true;
-            this.cboEntity.Location = new System.Drawing.Point(366, 603);
+            this.cboEntity.Location = new System.Drawing.Point(403, 544);
             this.cboEntity.Name = "cboEntity";
             this.cboEntity.Size = new System.Drawing.Size(162, 21);
             this.cboEntity.TabIndex = 3;
@@ -62,7 +63,7 @@
             // btnGenerateClass
             // 
             this.btnGenerateClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerateClass.Location = new System.Drawing.Point(534, 601);
+            this.btnGenerateClass.Location = new System.Drawing.Point(571, 542);
             this.btnGenerateClass.Name = "btnGenerateClass";
             this.btnGenerateClass.Size = new System.Drawing.Size(142, 23);
             this.btnGenerateClass.TabIndex = 4;
@@ -74,7 +75,7 @@
             // 
             this.lblEntity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEntity.AutoSize = true;
-            this.lblEntity.Location = new System.Drawing.Point(324, 606);
+            this.lblEntity.Location = new System.Drawing.Point(361, 547);
             this.lblEntity.Name = "lblEntity";
             this.lblEntity.Size = new System.Drawing.Size(36, 13);
             this.lblEntity.TabIndex = 2;
@@ -83,18 +84,18 @@
             // btnGenerateTable
             // 
             this.btnGenerateTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGenerateTable.Location = new System.Drawing.Point(12, 601);
+            this.btnGenerateTable.Location = new System.Drawing.Point(12, 513);
             this.btnGenerateTable.Name = "btnGenerateTable";
-            this.btnGenerateTable.Size = new System.Drawing.Size(134, 23);
+            this.btnGenerateTable.Size = new System.Drawing.Size(161, 23);
             this.btnGenerateTable.TabIndex = 1;
-            this.btnGenerateTable.Text = "Generate Table Script";
+            this.btnGenerateTable.Text = "Generate Create Table Script";
             this.btnGenerateTable.UseVisualStyleBackColor = true;
             this.btnGenerateTable.Click += new System.EventHandler(this.btnGenerateTable_Click);
             // 
             // btnGenerateProc
             // 
             this.btnGenerateProc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGenerateProc.Location = new System.Drawing.Point(152, 601);
+            this.btnGenerateProc.Location = new System.Drawing.Point(179, 542);
             this.btnGenerateProc.Name = "btnGenerateProc";
             this.btnGenerateProc.Size = new System.Drawing.Size(134, 23);
             this.btnGenerateProc.TabIndex = 5;
@@ -102,11 +103,23 @@
             this.btnGenerateProc.UseVisualStyleBackColor = true;
             this.btnGenerateProc.Click += new System.EventHandler(this.btnGenerate_Proc);
             // 
+            // btnGenerateConversion
+            // 
+            this.btnGenerateConversion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGenerateConversion.Location = new System.Drawing.Point(12, 542);
+            this.btnGenerateConversion.Name = "btnGenerateConversion";
+            this.btnGenerateConversion.Size = new System.Drawing.Size(161, 23);
+            this.btnGenerateConversion.TabIndex = 6;
+            this.btnGenerateConversion.Text = "Generate Conversion Script";
+            this.btnGenerateConversion.UseVisualStyleBackColor = true;
+            this.btnGenerateConversion.Click += new System.EventHandler(this.btnGenerateConversion_Click);
+            // 
             // CodeViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 636);
+            this.ClientSize = new System.Drawing.Size(725, 577);
+            this.Controls.Add(this.btnGenerateConversion);
             this.Controls.Add(this.btnGenerateProc);
             this.Controls.Add(this.btnGenerateTable);
             this.Controls.Add(this.lblEntity);
@@ -129,6 +142,7 @@
         private System.Windows.Forms.Label lblEntity;
         private System.Windows.Forms.Button btnGenerateTable;
         private System.Windows.Forms.Button btnGenerateProc;
+        private System.Windows.Forms.Button btnGenerateConversion;
     }
 }
 
